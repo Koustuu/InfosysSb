@@ -2,9 +2,9 @@ from utils.neutral_words import neutral_words
 from utils.positive_words import positive_words
 from utils.negative_words import negative_words
 from pymongo import MongoClient
-import certifi
 
-client = MongoClient("mongodb+srv://koustubhanagaraj_db_user:X4R1xdxViJIQF4N0@cluster0.3prmql9.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0" ,tls=True, tlsCAFile=certifi.where())
+
+client = MongoClient("mongodb_credentails")
 
 database = client.get_database("textminer")
 sentences_collection = database.get_collection("sentences")
