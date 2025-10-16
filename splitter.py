@@ -1,7 +1,7 @@
 import multitasking
 from sentiment_analysis import score_paragraph, score_sentence
 from pymongo import MongoClient
-import certifi
+
 # Set max threads for multitasking
 multitasking.set_max_threads(1)
 
@@ -13,8 +13,7 @@ def score(chunk_data, index):
 
 
 def print_final_analysis():
-    client = MongoClient("mongodb+srv://koustubhanagaraj_db_user:X4R1xdxViJIQF4N0@cluster0.3prmql9.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0" , tls=True,tlsCAFile=certifi.where())
-
+    client = MongoClient("mongodb_credentials")
     database = client.get_database("textminer")
     analysis_collection = database.get_collection("analysis")
     doc_id = "default"
